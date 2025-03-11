@@ -1,4 +1,4 @@
-package com.koko.train.member.aspect;
+package com.koko.train.common.aspect;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.support.spring.PropertyPreFilters;
