@@ -4,6 +4,7 @@ import cn.hutool.core.collection.CollUtil;
 import com.koko.train.member.domain.Member;
 import com.koko.train.member.domain.MemberExample;
 import com.koko.train.member.mapper.MemberMapper;
+import com.koko.train.member.req.MemberRegisterReq;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,8 @@ public class MemberService {
     }
 
     //注册服务
-    public long register(String mobile) {
+    public long register(MemberRegisterReq req) {
+        String mobile = req.getMobile();
         MemberExample memberExample = new MemberExample();
         memberExample.createCriteria().andMobileEqualTo(mobile);
         List<Member> list = memberMapper.selectByExample(memberExample);
@@ -36,4 +38,7 @@ public class MemberService {
         memberMapper.insert(member);
         return member.getId();
     }
+
+
+
 }
