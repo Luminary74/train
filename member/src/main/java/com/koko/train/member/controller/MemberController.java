@@ -5,6 +5,7 @@ import com.koko.train.common.resp.CommonResp;
 import com.koko.train.member.req.MemberRegisterReq;
 import com.koko.train.member.service.MemberService;
 import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,9 +26,10 @@ public class MemberController {
     }
 
     @PostMapping("/register")
-    public CommonResp<Long> register(MemberRegisterReq req) {
+    public CommonResp<Long> register(@Valid MemberRegisterReq req) {
         long register = memberService.register(req);
-        /*CommonResp<Long> commonResp = new CommonResp<>();
+        /*
+        CommonResp<Long> commonResp = new CommonResp<>();
         commonResp.setContent(register);
         return commonResp;*/
         return new CommonResp<>(register);
