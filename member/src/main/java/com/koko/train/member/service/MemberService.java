@@ -1,6 +1,8 @@
 package com.koko.train.member.service;
 
 import cn.hutool.core.collection.CollUtil;
+import com.koko.train.common.exception.BusinessException;
+import com.koko.train.common.exception.BusinessExceptionEnum;
 import com.koko.train.member.domain.Member;
 import com.koko.train.member.domain.MemberExample;
 import com.koko.train.member.mapper.MemberMapper;
@@ -28,7 +30,7 @@ public class MemberService {
         List<Member> list = memberMapper.selectByExample(memberExample);
 
         if (CollUtil.isNotEmpty(list)) {
-            throw new RuntimeException("手机已注册");
+            throw new BusinessException(BusinessExceptionEnum.MEMBER_MOBILE_EXIST);
         }
 
 
