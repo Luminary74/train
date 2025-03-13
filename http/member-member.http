@@ -13,11 +13,11 @@ mobile=12345678
 ###
 
 
-POST http://localhost:8001/member/member/send-code
+POST http://localhost:8001/member/member/login
 Content-Type: application/json
 
 {
-  "mobile": "13000000000",
+  "mobile": "13000000001",
   "code": "8888"
 }
 
