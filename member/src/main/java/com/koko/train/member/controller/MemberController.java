@@ -2,15 +2,14 @@ package com.koko.train.member.controller;
 
 
 import com.koko.train.common.resp.CommonResp;
+import com.koko.train.member.req.MemberLoginReq;
 import com.koko.train.member.req.MemberRegisterReq;
 import com.koko.train.member.req.MemberSendCodeReq;
+import com.koko.train.member.resp.MemberLoginResp;
 import com.koko.train.member.service.MemberService;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/member")
@@ -40,5 +39,11 @@ public class MemberController {
     public CommonResp<Long> sendCode(@Valid MemberSendCodeReq req) {
         memberService.sendCode(req);
         return new CommonResp<>();
+    }
+
+    @PostMapping("/login")
+    public CommonResp<MemberLoginResp> login(@Valid MemberLoginReq req) {
+        MemberLoginResp resp = memberService.login(req);
+        return new CommonResp<>(resp);
     }
 }
