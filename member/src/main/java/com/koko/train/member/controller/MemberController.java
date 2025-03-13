@@ -26,7 +26,7 @@ public class MemberController {
     }
 
     @PostMapping("/register")
-    public CommonResp<Long> register(@Valid MemberRegisterReq req) {
+    public CommonResp<Long> register(@Valid @RequestBody MemberRegisterReq req) {
         long register = memberService.register(req);
         return new CommonResp<>(register);
     }
