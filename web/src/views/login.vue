@@ -44,7 +44,6 @@ import axios from 'axios';
 export default defineComponent({
   name: "login-view",
   setup() {
-
     const loginForm = reactive({
       mobile: '13000000000',
       code: '',
@@ -54,12 +53,12 @@ export default defineComponent({
       console.log("Success",values);
     };
 
-    const onFinishFailed = values => {
-      console.log("Failed",values);
+    const onFinishFailed = errorInfo => {
+      console.log("Failed",errorInfo);
     };
 
     const sendCode = () => {
-      axios.post("/member/member/send-code", {
+      axios.post("http://localhost:8000/member/member/send-code", {
         mobile: loginForm.mobile
       }).then(response => {
        console.log(response);
