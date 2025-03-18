@@ -1,3 +1,4 @@
+/*
 package com.koko.train.gateway.config;
 
 import org.slf4j.Logger;
@@ -20,3 +21,4 @@ public class Test1Filter implements GlobalFilter {
     }
 
 }
+*/
