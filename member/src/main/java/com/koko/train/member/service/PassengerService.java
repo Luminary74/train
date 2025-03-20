@@ -3,6 +3,7 @@ package com.koko.train.member.service;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.util.ObjectUtil;
+import com.github.pagehelper.PageHelper;
 import com.koko.train.common.context.LoginMemberContext;
 import com.koko.train.common.util.SnowUtil;
 import com.koko.train.member.domain.Passenger;
@@ -38,6 +39,7 @@ public class PassengerService {
         if (ObjectUtil.isNotNull(req.getMemberId())) {
             criteria.andMemberIdEqualTo(LoginMemberContext.getId());
         }
+        PageHelper.startPage(2,1);
         List<Passenger> passengerList = passengerMapper.selectByExample(passengerExample);
         return BeanUtil.copyToList(passengerList, PassengerQueryResp.class);
     }
