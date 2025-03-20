@@ -1,6 +1,8 @@
 package com.koko.train.member.req;
 
-public class PassengerQueryReq {
+import com.koko.train.common.req.PageReq;
+
+public class PassengerQueryReq extends PageReq {
 
     private Long memberId;
 
