@@ -22,14 +22,10 @@
 
 <script>
 import {defineComponent, reactive, ref} from "vue";
-import passenger from "@/views/main/passenger.vue";
+import {notification} from "ant-design-vue";
+import axios from "axios";
 
 export default defineComponent({
-  computed: {
-    passenger() {
-      return passenger
-    }
-  },
   setup(){
     const visible = ref(false);
     const passenger = reactive({
@@ -45,10 +41,17 @@ export default defineComponent({
       visible.value = true;
     };
 
-    const handleOk = e => {
-      console.log(e);
-      visible.value = false;
-    }
+    const handleOk = () => {
+      axios.post("/member/passenger/save", passenger).then((response) => {
+        let data = response.data;
+        if (data.success) {
+          notification.success({description: "保存成功！"});
+          visible.value = false;
+        } else {
+          notification.error({description: data.message});
+        }
+      });
+    };
     return{
       passenger,
       visible,
