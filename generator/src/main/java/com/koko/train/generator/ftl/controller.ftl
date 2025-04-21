@@ -1,13 +1,13 @@
-package com.koko.train.member.controller;
+package com.koko.train.${module}.controller;
 
 
 import com.koko.train.common.context.LoginMemberContext;
 import com.koko.train.common.resp.CommonResp;
 import com.koko.train.common.resp.PageResp;
-import com.koko.train.member.req.${Domain}QueryReq;
-import com.koko.train.member.req.${Domain}SaveReq;
-import com.koko.train.member.resp.${Domain}QueryResp;
-import com.koko.train.member.service.${Domain}Service;
+import com.koko.train.${module}.req.${Domain}QueryReq;
+import com.koko.train.${module}.req.${Domain}SaveReq;
+import com.koko.train.${module}.resp.${Domain}QueryResp;
+import com.koko.train.${module}.service.${Domain}Service;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;

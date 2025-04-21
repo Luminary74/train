@@ -1,4 +1,4 @@
-package com.koko.train.member.req;
+package com.koko.train.${module}.req;
 
 <#list typeSet as type>
     <#if type=='Date'>
