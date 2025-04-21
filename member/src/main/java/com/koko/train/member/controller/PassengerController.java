@@ -36,7 +36,4 @@ public class PassengerController {
         passengerService.delete(id);
         return new CommonResp<>();
     }
-
-
-
 }

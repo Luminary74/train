@@ -42,10 +42,12 @@
             <artifactId>hutool-all</artifactId>
         </dependency>
 
+
         <!-- 集成mysql连接 -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.22</version>
         </dependency>
     </dependencies>
 
@@ -59,7 +61,7 @@
                 <configuration>
                     <!--<configurationFile>src/main/resources/generator-config-member.xml</configurationFile>-->
                     <configurationFile>src/main/resources/generator-config-member.xml</configurationFile>
-                    <configurationFile>src/main/resources/generator-config-business.xml</configurationFile>
+<!--                    <configurationFile>src/main/resources/generator-config-business.xml</configurationFile>-->
                     <!--<configurationFile>src/main/resources/generator-config-batch.xml</configurationFile>-->
                     <overwrite>true</overwrite>
                     <verbose>true</verbose>

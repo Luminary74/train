@@ -1,5 +1,6 @@
-package com.koko.train.generator.ftl;
+package com.koko.test;
 
-public class Test {
+public class ${domain} {
+
     private String name;
 }

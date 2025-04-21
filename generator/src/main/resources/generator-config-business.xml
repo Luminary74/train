@@ -23,7 +23,7 @@
 
         <!-- 配置数据源，需要根据自己的项目修改 -->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.74.128:3306/business?serverTimezone=Asia/Shanghai"
+                        connectionURL="jdbc:mysql://192.168.74.130:3306/business?serverTimezone=Asia/Shanghai"
                         userId="trainBusiness"
                         password="123456">
         </jdbcConnection>

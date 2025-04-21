@@ -1,5 +1,6 @@
 package com.koko.train.generator.util;
 
+
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
 
